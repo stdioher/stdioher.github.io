@@ -13,16 +13,16 @@ title                    : "Bingwen Feng"
 title_separator          : "-"
 name                     : &name "Bingwen Feng"
 description              : &description "Associate Professor, Assistant Dean, College of Cyber Security, Jinan University"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
+url                      : https://bingwenfeng.com # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "stdioher/stdioher.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "https://pub-b1c0c3e282ba4af9b356ee9175514afb.r2.dev/bingwen.png"
+  avatar           : "https://img.stdlibh.site/bingwen.png"
   name             : "Bingwen Feng"
   pronouns         : # example: "she/her"  
   bio              : "Associate Professor, Assistant Dean<br>College of Cyber Security<br>Jinan University"
