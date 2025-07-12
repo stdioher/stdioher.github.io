@@ -127,7 +127,6 @@ author_profile: true
         <div class="llm-description">
             A feature-rich, extensible, and user-friendly self-hosted WebUI designed to operate entirely offline. Supports various LLM runners including Ollama and OpenAI-compatible APIs.
         </div>
-        <div class="llm-url">47.113.200.53:33005</div>
     </a>
 
     <a href="http://47.113.200.53:33210/" target="_blank" class="llm-card lobechat">
@@ -136,7 +135,6 @@ author_profile: true
         <div class="llm-description">
             An open-source, modern-design ChatGPT/LLMs UI/Framework. Supports speech-synthesis, multimodal, and extensible Function Call plugin system. One-click FREE deployment.
         </div>
-        <div class="llm-url">47.113.200.53:33210</div>
     </a>
 
     <a href="https://lmarena.ai/leaderboard" target="_blank" class="llm-card lmarena">
@@ -145,7 +143,6 @@ author_profile: true
         <div class="llm-description">
             An open platform for evaluating AI through human preference. Compare different language models side-by-side and contribute to the community-driven evaluation of AI systems.
         </div>
-        <div class="llm-url">lmarena.ai/leaderboard</div>
     </a>
 
     <a href="https://api.masanli.top/" target="_blank" class="llm-card newapi">
@@ -154,7 +151,6 @@ author_profile: true
         <div class="llm-description">
             A unified large model interface gateway provides a unified API interface for a variety of mainstream large models, simplifies the complexity of developers integrating multiple AI models, and supports load balancing and intelligent routing.
         </div>
-        <div class="llm-url">api.masanli.top</div>
     </a>
 </div>
 
