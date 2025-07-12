@@ -17,14 +17,20 @@ main:
   - title: "Teaching"
     url: /teaching/    
     
+  - title: "Information Hiding Course"
+    url: /information-hiding-course/
+    
+  - title: "LLM Practice"
+    url: /llm-practice/
+    
   - title: "Portfolio"
     url: /portfolio/
         
   # - title: "Blog Posts"
   #   url: /year-archive/
     
-  - title: "CV"
-    url: /cv/
+  # - title: "CV"
+  #   url: /cv/
     
   # - title: "CV"
   #   url: /cv-json/

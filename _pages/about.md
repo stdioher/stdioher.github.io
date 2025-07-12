@@ -7,19 +7,84 @@ redirect_from:
   - /about.html
 ---
 
-I am an Associate Professor and Assistant Dean at the College of Cyber Security, Jinan University, Guangzhou, China. My research focuses on AI security and multimedia security.
 
-### Biography
+{% include base_path %}
 
-I have published over 30 papers in leading international journals and conferences, including *IEEE Transactions on Information Forensics and Security* (TIFS) and *IEEE Transactions on Circuits and Systems for Video Technology* (TCSVT). My research has also resulted in over 10 invention patents, including 2 international patents, and I have contributed to the development of 3 industry standards.
+Education
+======
+* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* M.S. in Jekyll, GitHub University, 2014
+* B.S. in GitHub, GitHub University, 2012
 
-I have led as Principal Investigator (PI) on more than 10 research projects. These include sub-projects of the National Key R&D Program, grants from the General and Youth Programs of the National Natural Science Foundation of China (NSFC), and projects funded by the Key-Area R&D Program of Guangdong Province.
+Work experience
+======
+* **Associate Professor, Assistant Dean**
+  * College of Cyber Security, Jinan University, Guangzhou, China
 
-I am actively involved in the academic community, having served as the Organizing Committee Chair for CryptoIC 2023 and as a committee member for several technical committees, such as the CSIG Technical Committee on Digital Media Forensics and Security. I am also a regular reviewer for esteemed journals, including *IEEE TIFS*, *IEEE TDSC*, and the *Journal of Software*.
+Research Interests
+======
+*   **Multimedia security:** Steganography, steganalysis, digital watermarking, signal processing for security application.
+*   **AI security:** AI model watermarking, adversarial example.
 
-### Research Interests
+Publications
+======
+  <ul>{% for post in site.publications reversed %}
+    {% include archive-single-cv.html %}
+    
+    <!-- Add framework images for specific publications -->
+    {% if post.title contains "Robust Generative Steganography" %}
+      <div style="margin: 10px 0; text-align: center;">
+        <img src="/images/publications/Robust Generative Steganography for Image Hiding.gif" alt="Framework" style="width:100%; max-width:500px; border: 1px solid #ddd; border-radius: 5px;">
+      </div>
+    {% elsif post.title contains "Conditional image hiding" %}
+      <div style="margin: 10px 0; text-align: center;">
+        <img src="/images/publications/Conditional image hiding network based on style transfer.jpg" alt="Framework" style="width:100%; max-width:500px; border: 1px solid #ddd; border-radius: 5px;">
+      </div>
+    {% elsif post.title contains "Camera-shooting resilient" %}
+      <div style="margin: 10px 0; text-align: center;">
+        <img src="/images/publications/Camera-Shooting Resilient Watermarking on.gif" alt="Framework" style="width:100%; max-width:500px; border: 1px solid #ddd; border-radius: 5px;">
+      </div>
+    {% elsif post.title contains "JPEG Compression-Resistant" %}
+      <div style="margin: 10px 0; text-align: center;">
+        <img src="/images/publications/JPEG Compression-Resistant Generative Image.gif" alt="Framework" style="width:100%; max-width:500px; border: 1px solid #ddd; border-radius: 5px;">
+      </div>
+    {% elsif post.title contains "robust reversible watermarking" %}
+      <div style="margin: 10px 0; text-align: center;">
+        <img src="/images/publications/A Robust Reversible Watermarking scheme using DC prediction and histogram shifting.jpg" alt="Framework" style="width:100%; max-width:500px; border: 1px solid #ddd; border-radius: 5px;">
+      </div>
+    {% elsif post.title contains "Multi-Party Reversible" %}
+      <div style="margin: 10px 0; text-align: center;">
+        <img src="/images/publications/Multi-Party Reversible Data Hiding.gif" alt="Framework" style="width:100%; max-width:500px; border: 1px solid #ddd; border-radius: 5px;">
+      </div>
+    {% elsif post.title contains "Removing Hidden Information" %}
+      <div style="margin: 10px 0; text-align: center;">
+        <img src="/images/publications/Removing Hidden Information by Geometrical Perturbation in Frequency Domain.png" alt="Framework" style="width:100%; max-width:500px; border: 1px solid #ddd; border-radius: 5px;">
+      </div>
+    {% elsif post.title contains "Robust image hiding" %}
+      <div style="margin: 10px 0; text-align: center;">
+        <img src="/images/publications/Robust image hiding network with Frequency and Spatial Attentions.jpg" alt="Framework" style="width:100%; max-width:500px; border: 1px solid #ddd; border-radius: 5px;">
+      </div>
+    {% elsif post.title contains "TCEMD" %}
+      <div style="margin: 10px 0; text-align: center;">
+        <img src="/images/publications/TCEMD_A_Trust_Cascading-Based_Emergency_Message_Dissemination_Model_in_VANETs.gif" alt="Framework" style="width:100%; max-width:500px; border: 1px solid #ddd; border-radius: 5px;">
+      </div>
+    {% endif %}
+  {% endfor %}</ul>
 
-*   **Multimedia Security:** Steganography, Steganalysis, Digital Watermarking, Signal Processing for Security Applications.
-*   **AI Security:** AI Model Watermarking, Adversarial Examples.
+Research Grants
+======
+*   **PI**, Research on Generative Image Steganography with Multi-Attribute Balancing (62472199), General Program of National Natural Science Foundation of China (NSFC). Jan 2025 – Dec 2028.
+*   **PI**, Research on Key Technologies of Image Steganography with Robustness and Anti-Detection Capabilities (61802145), Youth Program of National Natural Science Foundation of China (NSFC). Jan 2019 – Dec 2021.
+*   **PI**, Key Technologies and Systems for Multi-Dimensional Dynamic Location Privacy Protection (2017YFB0802203), Sub-project, National Key R&D Program of China. Jul 2017 – Dec 2020.
+*   **PI**, Key Technologies and Systems for Intelligent Perception of Cybersecurity Situational Awareness Based on Big Data (2019B010136003), Sub-project, Key-Area R&D Program of Guangdong Province. Jan 2019 – Dec 2022.
+
+
+Professional Service
+======
+*   **Guest Editor**, *Symmetry* (ISSN: 2073-8994; CiteScore: Q1).
+*   **Organizing Committee Chair**, CryptoIC 2023 (China Cryptography Association Annual Conference on Cryptographic Chips).
+*   **Poster Chair**, ICEA 2021 (2021 ACM International Conference on Intelligent Computing and its Emerging Applications).
+*   **Peer Reviewer** for numerous journals including *IEEE Transactions on Information Forensics and Security*, *Information Fusion*, and more.
+*   Recognized with a **Certificate of Excellence in Reviewing** from *Information Fusion*.
 
 For a full list of my publications, please see my [Google Scholar Profile](https://scholar.google.com/).

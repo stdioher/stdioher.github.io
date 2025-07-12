@@ -6,31 +6,144 @@ author_profile: true
 ---
 
 {% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+<div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar</a>.
+</div>
 {% endif %}
 
 {% include base_path %}
 
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
+{% for category in site.publication_category %}
+{% assign title_shown = false %}
+{% for post in site.publications reversed %}
+{% if post.category != category[0] %}
+{% continue %}
 {% endif %}
+{% unless title_shown %}
+<h2>{{ category[1].title }}</h2>
+<hr />
+{% assign title_shown = true %}
+{% endunless %}
+{% include archive-single.html %}
 
+<!-- Add framework images for specific publications -->
+{% if post.title contains "Robust Generative Steganography" %}
+<div style="margin: 15px 0; text-align: center; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+  <img src="/images/publications/Robust Generative Steganography for Image Hiding.gif" alt="Framework"
+    style="width:100%; max-width:600px; border: 1px solid #ddd; border-radius: 5px;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">Research Framework</p>
+</div>
+{% elsif post.title contains "Conditional image hiding" %}
+<div style="margin: 15px 0; text-align: center; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+  <img src="/images/publications/Conditional image hiding network based on style transfer.jpg" alt="Framework"
+    style="width:100%; max-width:600px; border: 1px solid #ddd; border-radius: 5px;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">Research Framework</p>
+</div>
+{% elsif post.title contains "Camera-shooting resilient" %}
+<div style="margin: 15px 0; text-align: center; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+  <img src="/images/publications/Camera-Shooting Resilient Watermarking on.gif" alt="Framework"
+    style="width:100%; max-width:600px; border: 1px solid #ddd; border-radius: 5px;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">Research Framework</p>
+</div>
+{% elsif post.title contains "JPEG Compression-Resistant" %}
+<div style="margin: 15px 0; text-align: center; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+  <img src="/images/publications/JPEG Compression-Resistant Generative Image.gif" alt="Framework"
+    style="width:100%; max-width:600px; border: 1px solid #ddd; border-radius: 5px;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">Research Framework</p>
+</div>
+{% elsif post.title contains "robust reversible watermarking" %}
+<div style="margin: 15px 0; text-align: center; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+  <img src="/images/publications/A Robust Reversible Watermarking scheme using DC prediction and histogram shifting.jpg"
+    alt="Framework" style="width:100%; max-width:600px; border: 1px solid #ddd; border-radius: 5px;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">Research Framework</p>
+</div>
+{% elsif post.title contains "Multi-Party Reversible" %}
+<div style="margin: 15px 0; text-align: center; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+  <img src="/images/publications/Multi-Party Reversible Data Hiding.gif" alt="Framework"
+    style="width:100%; max-width:600px; border: 1px solid #ddd; border-radius: 5px;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">Research Framework</p>
+</div>
+{% elsif post.title contains "Removing Hidden Information" %}
+<div style="margin: 15px 0; text-align: center; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+  <img src="/images/publications/Removing Hidden Information by Geometrical Perturbation in Frequency Domain.png"
+    alt="Framework" style="width:100%; max-width:600px; border: 1px solid #ddd; border-radius: 5px;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">Research Framework</p>
+</div>
+{% elsif post.title contains "Robust image hiding" %}
+<div style="margin: 15px 0; text-align: center; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+  <img src="/images/publications/Robust image hiding network with Frequency and Spatial Attentions.jpg" alt="Framework"
+    style="width:100%; max-width:600px; border: 1px solid #ddd; border-radius: 5px;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">Research Framework</p>
+</div>
+{% elsif post.title contains "TCEMD" %}
+<div style="margin: 15px 0; text-align: center; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+  <img src="/images/publications/TCEMD_A_Trust_Cascading-Based_Emergency_Message_Dissemination_Model_in_VANETs.gif"
+    alt="Framework" style="width:100%; max-width:600px; border: 1px solid #ddd; border-radius: 5px;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">Research Framework</p>
+</div>
+{% endif %}
+{% endfor %}
+{% endfor %}
+{% else %}
+{% for post in site.publications reversed %}
+{% include archive-single.html %}
 
-
+<!-- Add framework images for specific publications -->
+{% if post.title contains "Robust Generative Steganography" %}
+<div style="margin: 15px 0; text-align: center; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+  <img src="/images/publications/Robust Generative Steganography for Image Hiding.gif" alt="Framework"
+    style="width:100%; max-width:600px; border: 1px solid #ddd; border-radius: 5px;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">Research Framework</p>
+</div>
+{% elsif post.title contains "Conditional image hiding" %}
+<div style="margin: 15px 0; text-align: center; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+  <img src="/images/publications/Conditional image hiding network based on style transfer.jpg" alt="Framework"
+    style="width:100%; max-width:600px; border: 1px solid #ddd; border-radius: 5px;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">Research Framework</p>
+</div>
+{% elsif post.title contains "Camera-shooting resilient" %}
+<div style="margin: 15px 0; text-align: center; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+  <img src="/images/publications/Camera-Shooting Resilient Watermarking on.gif" alt="Framework"
+    style="width:100%; max-width:600px; border: 1px solid #ddd; border-radius: 5px;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">Research Framework</p>
+</div>
+{% elsif post.title contains "JPEG Compression-Resistant" %}
+<div style="margin: 15px 0; text-align: center; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+  <img src="/images/publications/JPEG Compression-Resistant Generative Image.gif" alt="Framework"
+    style="width:100%; max-width:600px; border: 1px solid #ddd; border-radius: 5px;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">Research Framework</p>
+</div>
+{% elsif post.title contains "robust reversible watermarking" %}
+<div style="margin: 15px 0; text-align: center; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+  <img src="/images/publications/A Robust Reversible Watermarking scheme using DC prediction and histogram shifting.jpg"
+    alt="Framework" style="width:100%; max-width:600px; border: 1px solid #ddd; border-radius: 5px;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">Research Framework</p>
+</div>
+{% elsif post.title contains "Multi-Party Reversible" %}
+<div style="margin: 15px 0; text-align: center; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+  <img src="/images/publications/Multi-Party Reversible Data Hiding.gif" alt="Framework"
+    style="width:100%; max-width:600px; border: 1px solid #ddd; border-radius: 5px;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">Research Framework</p>
+</div>
+{% elsif post.title contains "Removing Hidden Information" %}
+<div style="margin: 15px 0; text-align: center; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+  <img src="/images/publications/Removing Hidden Information by Geometrical Perturbation in Frequency Domain.png"
+    alt="Framework" style="width:100%; max-width:600px; border: 1px solid #ddd; border-radius: 5px;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">Research Framework</p>
+</div>
+{% elsif post.title contains "Robust image hiding" %}
+<div style="margin: 15px 0; text-align: center; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+  <img src="/images/publications/Robust image hiding network with Frequency and Spatial Attentions.jpg" alt="Framework"
+    style="width:100%; max-width:600px; border: 1px solid #ddd; border-radius: 5px;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">Research Framework</p>
+</div>
+{% elsif post.title contains "TCEMD" %}
+<div style="margin: 15px 0; text-align: center; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+  <img src="/images/publications/TCEMD_A_Trust_Cascading-Based_Emergency_Message_Dissemination_Model_in_VANETs.gif"
+    alt="Framework" style="width:100%; max-width:600px; border: 1px solid #ddd; border-radius: 5px;">
+  <p style="margin-top: 10px; font-style: italic; color: #666;">Research Framework</p>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}

@@ -1,6 +1,6 @@
 ---
 title: "Research on Generative Image Steganography with Multi-Attribute Balancing"
-excerpt: "General Program of National Natural Science Foundation of China (NSFC) (62472199)<br/><img src='/images/500x300.png'>"
+excerpt: "General Program of National Natural Science Foundation of China (NSFC) (62472199)<br/>"
 collection: portfolio
 ---
 
