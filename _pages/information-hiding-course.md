@@ -833,121 +833,16 @@ Welcome to the Information Hiding Course page! This course aims to explore the t
   </div>
 </div>
 
-<script>
-  // 使用事件委托代替内联事件处理器
-  document.addEventListener('DOMContentLoaded', function() {
-    // 摘要展开/fold功能
-    document.addEventListener('click', function(e) {
-      if (e.target.closest('.abstract-toggle')) {
-        const element = e.target.closest('.abstract-toggle');
-        const index = element.getAttribute('data-index');
-        const abstractContent = document.getElementById('abstract-' + index);
-        const journalElement = document.getElementById('journal-' + index);
-        const toggleText = element.querySelector('.toggle-text');
+<!-- Image Modal -->
+<div id="imageModal" class="image-modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <img id="modalImage" class="modal-image" src="" alt="">
+    <div id="modalTitle" class="modal-title"></div>
+  </div>
+</div>
 
-        if (abstractContent && journalElement && toggleText) {
-          if (abstractContent.classList.contains('expanded')) {
-            // fold
-            abstractContent.classList.remove('expanded');
-            element.classList.remove('expanded');
-            journalElement.classList.remove('show');
-            toggleText.textContent = 'show all ▼';
-          } else {
-            // 展开
-            abstractContent.classList.add('expanded');
-            element.classList.add('expanded');
-            journalElement.classList.add('show');
-            toggleText.textContent = 'fold ▲';
-          }
-        }
-      }
-    });
-
-    // 图片Modal功能
-    document.addEventListener('click', function(e) {
-      if (e.target.classList.contains('modal-trigger')) {
-        const imgElement = e.target;
-        const title = imgElement.getAttribute('data-title') || imgElement.alt;
-        openImageModal(imgElement, title);
-      }
-    });
-
-    // Modal关闭功能
-    document.addEventListener('click', function(e) {
-      if (e.target.classList.contains('modal-close') || e.target.id === 'imageModal') {
-        closeImageModal();
-      }
-    });
-
-    // 防止Modal内容区域点击时关闭
-    document.addEventListener('click', function(e) {
-      if (e.target.classList.contains('modal-content')) {
-        e.stopPropagation();
-      }
-    });
-
-    // 键盘ESC关闭modal
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        closeImageModal();
-      }
-    });
-
-    // 初始化页面状态
-    initializePage();
-  });
-
-  function openImageModal(imgElement, title) {
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    const modalTitle = document.getElementById('modalTitle');
-
-    if (modal && modalImg && modalTitle) {
-      modal.classList.add('show');
-      modalImg.src = imgElement.src;
-      modalImg.alt = imgElement.alt;
-      modalTitle.textContent = title;
-
-      // 防止背景滚动
-      document.body.style.overflow = 'hidden';
-    }
-  }
-
-  function closeImageModal() {
-    const modal = document.getElementById('imageModal');
-    if (modal) {
-      modal.classList.remove('show');
-      // 恢复背景滚动
-      document.body.style.overflow = 'auto';
-    }
-  }
-
-  function initializePage() {
-    // 防止图片加载失败时的错误处理
-    const modalImg = document.getElementById('modalImage');
-    if (modalImg) {
-      modalImg.addEventListener('error', function() {
-        this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuWbvueJh+aXoOazleWKoOi9vTwvdGV4dD48L3N2Zz4=';
-      });
-    }
-
-    // 初始化页面时确保期刊信息隐藏
-    const allJournals = document.querySelectorAll('.publication-journal');
-    allJournals.forEach(function(journal) {
-      if (!journal.classList.contains('show')) {
-        journal.style.display = 'none';
-      }
-    });
-
-    // 确保所有展开按钮都有正确的初始状态
-    const allToggles = document.querySelectorAll('.abstract-toggle');
-    allToggles.forEach(function(toggle) {
-      const toggleText = toggle.querySelector('.toggle-text');
-      if (toggleText && !toggleText.textContent.includes('fold')) {
-        toggleText.textContent = 'show all ▼';
-      }
-    });
-  }
-</script>
+<!-- 引用外部JavaScript文件以符合GitHub Pages CSP政策 -->
+<script src="{{ base_path }}/assets/js/course.js"></script>
 
 If you have any questions or need further learning resources, please feel free to contact us!
