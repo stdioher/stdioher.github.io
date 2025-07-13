@@ -763,7 +763,7 @@ Welcome to the Information Hiding Course page! This course aims to explore the t
       <div class="account-card" style="background: white; border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
         <!-- Featured Image -->
         <div class="account-image" style="text-align: center; margin-bottom: 20px;">
-          <img src="/images/information_hide/Steganography Alliance.jpg" alt="Steganography Alliance Featured Image" style="width: 100%; max-width: 350px; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+          <img src="/images/information_hide/Steganography Alliance.png" alt="Steganography Alliance Featured Image" style="width: 100%; max-width: 350px; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
         </div>
         
         <div class="account-header" style="display: flex; align-items: center; margin-bottom: 15px; justify-content: center;">
@@ -836,7 +836,7 @@ Welcome to the Information Hiding Course page! This course aims to explore the t
 <script>
   // 使用事件委托代替内联事件处理器
   document.addEventListener('DOMContentLoaded', function() {
-    // 摘要展开/收起功能
+    // 摘要展开/fold功能
     document.addEventListener('click', function(e) {
       if (e.target.closest('.abstract-toggle')) {
         const element = e.target.closest('.abstract-toggle');
@@ -847,17 +847,17 @@ Welcome to the Information Hiding Course page! This course aims to explore the t
 
         if (abstractContent && journalElement && toggleText) {
           if (abstractContent.classList.contains('expanded')) {
-            // 收起
+            // fold
             abstractContent.classList.remove('expanded');
             element.classList.remove('expanded');
             journalElement.classList.remove('show');
-            toggleText.textContent = '展开全文 ▼';
+            toggleText.textContent = 'show all ▼';
           } else {
             // 展开
             abstractContent.classList.add('expanded');
             element.classList.add('expanded');
             journalElement.classList.add('show');
-            toggleText.textContent = '收起 ▲';
+            toggleText.textContent = 'fold ▲';
           }
         }
       }
@@ -943,8 +943,8 @@ Welcome to the Information Hiding Course page! This course aims to explore the t
     const allToggles = document.querySelectorAll('.abstract-toggle');
     allToggles.forEach(function(toggle) {
       const toggleText = toggle.querySelector('.toggle-text');
-      if (toggleText && !toggleText.textContent.includes('收起')) {
-        toggleText.textContent = '展开全文 ▼';
+      if (toggleText && !toggleText.textContent.includes('fold')) {
+        toggleText.textContent = 'show all ▼';
       }
     });
   }
