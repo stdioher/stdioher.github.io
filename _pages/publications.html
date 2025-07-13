@@ -85,6 +85,11 @@ author_profile: false
     border-top: 1px solid #e9ecef;
     font-weight: 500;
     font-style: italic;
+    display: none;
+  }
+
+  .publication-journal.show {
+    display: block;
   }
 
   .publication-abstract {
@@ -127,7 +132,7 @@ author_profile: false
     color: #2980b9;
   }
 
-  .abstract-content.expanded+.publication-journal+.abstract-toggle {
+  .abstract-toggle.expanded {
     background: none;
     position: static;
     padding: 10px 0 0 0;
@@ -503,15 +508,15 @@ results reveal that the proposed model significantly outperforms the existing mo
       <div class="abstract-content" id="abstract-{{ forloop.index }}">
         {{ abstract }}
       </div>
-      <div class="publication-journal">
-        {{ journal }}
-      </div>
       <div class="abstract-toggle" data-index="{{ forloop.index }}" onclick="toggleAbstract(this)">
-        <span class="toggle-text">展开全文 ▼</span>
+        <span class="toggle-text">show all ▼</span>
+      </div>
+      <div class="publication-journal" id="journal-{{ forloop.index }}">
+        {{ journal }}
       </div>
     </div>
     <div class="publication-links">
-      <a href="{{ pdf_path }}" target="_blank">📄 PDF下载</a>
+      <a href="{{ pdf_path }}" target="_blank">📄 PDF</a>
       <a href="https://github.com/" target="_blank" class="github-link">📁 GitHub</a>
     </div>
   </div>
@@ -532,14 +537,21 @@ results reveal that the proposed model significantly outperforms the existing mo
   function toggleAbstract(element) {
     const index = element.getAttribute('data-index');
     const abstractContent = document.getElementById('abstract-' + index);
+    const journalElement = document.getElementById('journal-' + index);
     const toggleText = element.querySelector('.toggle-text');
 
     if (abstractContent.classList.contains('expanded')) {
+      // fold
       abstractContent.classList.remove('expanded');
-      toggleText.textContent = '展开全文 ▼';
+      element.classList.remove('expanded');
+      journalElement.classList.remove('show');
+      toggleText.textContent = 'show all ▼';
     } else {
+      // 展开
       abstractContent.classList.add('expanded');
-      toggleText.textContent = '收起 ▲';
+      element.classList.add('expanded');
+      journalElement.classList.add('show');
+      toggleText.textContent = 'fold ▲';
     }
   }
 
@@ -577,6 +589,23 @@ results reveal that the proposed model significantly outperforms the existing mo
     const modalImg = document.getElementById('modalImage');
     modalImg.addEventListener('error', function () {
       this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuWbvueJh+aXoOazleWKoOi9vTwvdGV4dD48L3N2Zz4=';
+    });
+
+    // 初始化页面时确保期刊信息隐藏
+    const allJournals = document.querySelectorAll('.publication-journal');
+    allJournals.forEach(function (journal) {
+      if (!journal.classList.contains('show')) {
+        journal.style.display = 'none';
+      }
+    });
+
+    // 确保所有展开按钮都有正确的初始状态
+    const allToggles = document.querySelectorAll('.abstract-toggle');
+    allToggles.forEach(function (toggle) {
+      const toggleText = toggle.querySelector('.toggle-text');
+      if (toggleText && !toggleText.textContent.includes('fold')) {
+        toggleText.textContent = 'show all ▼';
+      }
     });
   });
 </script>

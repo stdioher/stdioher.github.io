@@ -151,7 +151,7 @@ redirect_from:
         </div>
       {% elsif post.title contains "Removing Hidden Information" %}
         <div class="framework-image">
-          <img src="/images/publications/Removing Hidden Information by Geometrical Perturbation in Frequency Domain.png" alt="Research Framework">
+          <img src="/images/publications/Removing Hidden Information.png" alt="Research Framework">
           
         </div>
       {% elsif post.title contains "Robust image hiding" %}

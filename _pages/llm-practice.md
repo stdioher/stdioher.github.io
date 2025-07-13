@@ -95,6 +95,13 @@ author_profile: false
 .newapi {
     background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
 }
+.gitlab {
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+}
+
+.aicc {
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+}
 
 .page-header {
     text-align: center;
@@ -227,26 +234,7 @@ author_profile: false
 
 </div>
 
-<!-- AI Chat Interface -->
-<div class="chat-container">
-    <div class="chat-header">
-        <h2>AI Assistant</h2>
-        <p>Experience AI chat through our unified API gateway</p>
-    </div>
-    
-    <div class="chat-input-group">
-        <textarea id="chatPrompt" class="chat-textarea" placeholder="Input quetion...">Hello!</textarea>
-    </div>
-    
-    <button id="chatSendBtn" class="chat-send-btn">Send Message</button>
-    
-    <div style="margin-top: 20px;">
-        <h3 style="color: #495057; margin-bottom: 10px;">AI reply：</h3>
-        <div id="chatResponse" class="chat-response">Waiting to send message...</div>
-    </div>
-    
-    
-</div>
+
 
 <div class="llm-container">
     <a href="http://47.113.200.53:33005/" target="_blank" class="llm-card openwebui">
@@ -280,9 +268,43 @@ author_profile: false
             A unified large model interface gateway provides a unified API interface for a variety of mainstream large models, simplifies the complexity of developers integrating multiple AI models, and supports load balancing and intelligent routing.
         </div>
     </a>
+    <a href="https://gitlab.stdlibh.site/" target="_blank" class="llm-card gitlab">
+        <img src="/images/llm/gitlab.png" alt="Gitlab" class="llm-icon">
+        <div class="llm-title">Gitlab</div>
+        <div class="llm-description">
+            A self-hosted GitLab instance for personal code reference and storing deep learning training scripts.
+        </div>
+    </a>
+
+    <a href="https://icas.jnu.edu.cn/cas/login?service=https://aicc.jnu.edu.cn/api/blade-auth/jinanLogin?loginSuccessURL=https://aicc.jnu.edu.cn/" target="_blank" class="llm-card aicc">
+        <img src="/images/llm/jnu.png" alt="AICC" class="llm-icon">
+        <div class="llm-title">AICC</div>
+        <div class="llm-description">
+            The intelligent computing platform of Jinan University, utilized for deploying and fine-tuning large-scale model experiments.
+        </div>
+    </a>
 </div>
 
-
+<!-- AI Chat Interface -->
+<div class="chat-container">
+    <div class="chat-header">
+        <h2>AI Classmate</h2>
+        <p>Experience AI chat through our unified API gateway</p>
+    </div>
+    
+    <div class="chat-input-group">
+        <textarea id="chatPrompt" class="chat-textarea" placeholder="Input quetion...">Hello!</textarea>
+    </div>
+    
+    <button id="chatSendBtn" class="chat-send-btn">Send Message</button>
+    
+    <div style="margin-top: 20px;">
+        <h3 style="color: #495057; margin-bottom: 10px;">AI reply：</h3>
+        <div id="chatResponse" class="chat-response">Waiting to send message...</div>
+    </div>
+    
+    
+</div>
 
 <script>
 const CHAT_API_URL = "https://api.masanli.top/v1/chat/completions";
@@ -375,33 +397,7 @@ window.addEventListener('load', () => {
 });
 </script>
 
-## Platform Features
 
-### Open WebUI
-- **Multi-Model Support**: Compatible with Ollama, OpenAI API, and other LLM backends
-- **User Management**: Built-in authentication and user role management
-- **Plugin System**: Extensible with custom functions and integrations
-- **Offline Capable**: Run completely offline for privacy and security
-
-### LobeChat
-- **Modern Interface**: Clean, intuitive design with dark/light theme support
-- **Multimodal**: Support for text, image, and voice interactions
-- **Customizable**: Highly configurable with plugin architecture
-- **Real-time**: Fast response times with streaming support
-
-### LM Arena
-- **Model Comparison**: Side-by-side evaluation of different language models
-- **Community Driven**: Crowdsourced evaluation through human preferences
-- **Leaderboard**: Track the latest rankings and model performance
-- **Research Tool**: Valuable resource for AI research and development
-
-### New API
-- **Unified Gateway**: Single API interface for multiple large language models
-- **Model Aggregation**: Access to various mainstream AI models through one endpoint
-- **Load Balancing**: Intelligent routing and distribution of API requests
-- **Developer Friendly**: Simplified integration process for multi-model applications
-
----
 
 <div style="text-align: center; margin-top: 40px; padding: 20px; background-color: #f8f9fa; border-radius: 10px;">
     <h3>Research & Development</h3>
