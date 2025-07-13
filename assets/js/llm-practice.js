@@ -61,11 +61,20 @@
         } catch (err) {
             console.error("请求错误:", err);
 
-            // 根据错误类型提供不同的提示
+            // 检测当前环境
+            const environment = detectCORSSupport();
+
+            // 根据错误类型和环境提供不同的提示
             if (err.message.includes('Failed to fetch') || err.name === 'TypeError') {
-                responseDiv.textContent = "网络请求失败：CORS跨域限制\n\n原因：从 " + window.location.hostname + " 访问 api.masanli.top 被浏览器阻止\n\n解决方案：\n1. 点击下方按钮直接访问 New API 网站\n2. 如果是开发者，可以尝试安装CORS浏览器扩展";
+                responseDiv.textContent = getCORSErrorMessage(environment);
+            } else if (err.message.includes('401') || err.message.includes('403')) {
+                responseDiv.textContent = "API认证失败\n\n可能原因：\n1. API密钥已失效\n2. 服务器拒绝访问\n3. API额度已用完\n\n请联系管理员检查API配置";
+            } else if (err.message.includes('429')) {
+                responseDiv.textContent = "请求过于频繁\n\n请稍等片刻后再试，或联系管理员提升API限额";
+            } else if (err.message.includes('500') || err.message.includes('502') || err.message.includes('503')) {
+                responseDiv.textContent = "API服务器错误\n\n服务器暂时不可用，请稍后重试";
             } else {
-                responseDiv.textContent = "请求失败：" + err.message;
+                responseDiv.textContent = "请求失败：" + err.message + "\n\n环境：" + environment;
             }
             responseDiv.className = "chat-response error";
         } finally {
@@ -85,16 +94,80 @@
         }
     }
 
-    // 检测CORS支持
-    function detectCORSSupport() {
-        console.log("当前访问域名: " + window.location.hostname);
-        console.log("目标API域名: api.masanli.top");
-        console.log("协议: " + window.location.protocol);
+    // 更新网络状态显示
+    function updateNetworkStatus(environment) {
+        const statusElement = document.getElementById('networkStatus');
+        const detailsElement = document.getElementById('networkDetails');
 
-        if (window.location.protocol === 'file:') {
-            console.log('本地文件访问 - CORS限制较少');
+        if (!statusElement || !detailsElement) return;
+
+        const hostname = window.location.hostname;
+
+        switch (environment) {
+            case 'local':
+                statusElement.textContent = 'Local Development';
+                statusElement.style.color = '#28a745';
+                detailsElement.textContent = 'Running on localhost - CORS restrictions minimal';
+                break;
+            case 'github':
+                statusElement.textContent = 'GitHub Pages';
+                statusElement.style.color = '#ffc107';
+                detailsElement.textContent = 'May have CORS limitations - API calls might be restricted';
+                break;
+            case 'production':
+                statusElement.textContent = 'Production Environment';
+                statusElement.style.color = '#dc3545';
+                detailsElement.textContent = 'Domain: ' + hostname + ' - CORS restrictions apply to external APIs';
+                break;
+            default:
+                statusElement.textContent = 'Unknown';
+                statusElement.style.color = '#6c757d';
+                detailsElement.textContent = 'Environment detection failed';
+        }
+    }
+
+    // 检测CORS支持和环境
+    function detectCORSSupport() {
+        const hostname = window.location.hostname;
+        const protocol = window.location.protocol;
+
+        console.log("当前访问域名: " + hostname);
+        console.log("目标API域名: api.masanli.top");
+        console.log("协议: " + protocol);
+
+        // 判断是否为本地开发环境
+        const isLocalDev = hostname === 'localhost' ||
+            hostname === '127.0.0.1' ||
+            hostname.startsWith('192.168.') ||
+            hostname.startsWith('10.') ||
+            protocol === 'file:';
+
+        let environment;
+        if (isLocalDev) {
+            console.log('本地开发环境 - CORS限制较少');
+            environment = 'local';
+        } else if (hostname.includes('github.io')) {
+            console.log('GitHub Pages环境 - 可能存在CORS限制');
+            environment = 'github';
         } else {
-            console.log('网站访问 - 受CORS策略限制');
+            console.log('生产环境 (' + hostname + ') - 受CORS策略限制');
+            environment = 'production';
+        }
+
+        // 更新UI状态显示
+        updateNetworkStatus(environment);
+
+        return environment;
+    }
+
+    // 获取适合当前环境的错误消息
+    function getCORSErrorMessage(environment) {
+        const hostname = window.location.hostname;
+
+        if (environment === 'local') {
+            return "本地环境网络请求失败\n\n可能原因：\n1. API服务器暂时不可用\n2. 网络连接问题\n3. API密钥失效\n\n建议检查网络连接和API服务状态";
+        } else {
+            return "网络请求失败：CORS跨域限制\n\n原因：从 " + hostname + " 访问 api.masanli.top 被浏览器阻止\n\n解决方案：\n1. 点击页面上的 'New API' 卡片直接访问API网站\n2. 联系管理员在API服务器添加 " + hostname + " 到CORS白名单\n3. 如果是开发者，可以尝试安装CORS浏览器扩展\n4. 或者使用代理服务器转发请求";
         }
     }
 
@@ -118,10 +191,10 @@
             console.error('未找到聊天输入框元素');
         }
 
-        // 检测CORS支持
-        detectCORSSupport();
+        // 检测CORS支持和环境
+        const environment = detectCORSSupport();
 
-        console.log('LLM Practice页面JavaScript初始化完成');
+        console.log('LLM Practice页面JavaScript初始化完成 - 环境: ' + environment);
     }
 
     // 主初始化函数
@@ -136,7 +209,10 @@
         }
 
         // 页面加载完成时再次检测CORS
-        window.addEventListener('load', detectCORSSupport);
+        window.addEventListener('load', function () {
+            const env = detectCORSSupport();
+            console.log('页面加载完成 - 当前环境: ' + env);
+        });
     }
 
     // 启动初始化

@@ -303,6 +303,17 @@ author_profile: false
         <div id="chatResponse" class="chat-response">Waiting to send message...</div>
     </div>
     
+    <!-- Network Status Info -->
+    <div style="margin-top: 15px; padding: 10px; background-color: #e9ecef; border-radius: 8px; font-size: 12px; color: #6c757d;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span>Network Status:</span>
+            <span id="networkStatus" style="font-weight: bold;">Checking...</span>
+        </div>
+        <div style="margin-top: 5px; font-size: 11px;" id="networkDetails">
+            Detecting environment and CORS support...
+        </div>
+    </div>
+    
     
 </div>
 
