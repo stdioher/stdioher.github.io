@@ -137,27 +137,27 @@ redirect_from:
       {% if post.title contains "Robust Generative Steganography" %}
         <div class="framework-image">
           <img src="/images/publications/Robust Generative Steganography for Image Hiding.gif" alt="Research Framework">
-          <p style="margin-top: 10px; font-style: italic; color: #6c757d; font-size: 14px;">Research Framework</p>
+          
         </div>
       {% elsif post.title contains "JPEG Compression-Resistant" %}
         <div class="framework-image">
           <img src="/images/publications/JPEG Compression-Resistant Generative Image.gif" alt="Research Framework">
-          <p style="margin-top: 10px; font-style: italic; color: #6c757d; font-size: 14px;">Research Framework</p>
+          
         </div>
       {% elsif post.title contains "Camera-shooting resilient" %}
         <div class="framework-image">
           <img src="/images/publications/Camera-Shooting Resilient Watermarking on.gif" alt="Research Framework">
-          <p style="margin-top: 10px; font-style: italic; color: #6c757d; font-size: 14px;">Research Framework</p>
+          
         </div>
       {% elsif post.title contains "Removing Hidden Information" %}
         <div class="framework-image">
           <img src="/images/publications/Removing Hidden Information by Geometrical Perturbation in Frequency Domain.png" alt="Research Framework">
-          <p style="margin-top: 10px; font-style: italic; color: #6c757d; font-size: 14px;">Research Framework</p>
+          
         </div>
       {% elsif post.title contains "Robust image hiding" %}
         <div class="framework-image">
           <img src="/images/publications/Robust image hiding network with Frequency and Spatial Attentions.jpg" alt="Research Framework">
-          <p style="margin-top: 10px; font-style: italic; color: #6c757d; font-size: 14px;">Research Framework</p>
+          
         </div>
       {% endif %}
     </div>
