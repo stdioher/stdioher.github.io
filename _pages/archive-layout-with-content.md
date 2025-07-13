@@ -1,6 +1,6 @@
 ---
 title: "Archive Layout with Content"
-layout: archive
+layout: archive-nosidebar
 permalink: /archive-layout-with-content/
 ---
 

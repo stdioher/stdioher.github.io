@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: "Bingwen Feng"
-author_profile: true
+author_profile: false
 redirect_from: 
   - /about/
   - /about.html
@@ -12,9 +12,9 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* 09/2002 – 06/2006 Sun Yat-sen University Network Engineering Bachelor's Degree
+* 09/2006 – 06/2008 Sun Yat-sen University Software Engineering Master's Degree
+* 09/2010 – 12/2014 Sun Yat-sen University Computer Software and Theory Doctoral Degree
 
 Work experience
 ======

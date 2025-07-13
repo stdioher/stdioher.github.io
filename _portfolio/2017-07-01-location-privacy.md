@@ -1,6 +1,6 @@
 ---
 title: "Multi-Dimensional Dynamic Location Privacy Protection"
-excerpt: "Sub-project, National Key R&D Program of China (2017YFB0802203)<br/><img src='/images/500x300.png'>"
+excerpt: "Sub-project, National Key R&D Program of China (2017YFB0802203)<br/>"
 collection: portfolio
 ---
 

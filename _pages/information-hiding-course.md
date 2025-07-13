@@ -1,8 +1,8 @@
 ---
-layout: archive
+layout: archive-nosidebar
 title: "Information Hiding Course"
 permalink: /information-hiding-course/
-author_profile: true
+author_profile: false
 ---
 
 Welcome to the Information Hiding Course page! This course aims to explore the theoretical foundations and practical applications of information hiding technologies.
