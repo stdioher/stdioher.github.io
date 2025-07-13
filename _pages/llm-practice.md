@@ -296,16 +296,6 @@ author_profile: false
         <textarea id="chatPrompt" class="chat-textarea" placeholder="Input quetion...">Hello!</textarea>
     </div>
     
-    <!-- API选择器 -->
-    <div style="margin-bottom: 15px; text-align: center;">
-        <label style="font-size: 12px; color: #6c757d; margin-right: 10px;">API Provider:</label>
-        <select id="apiSelector" style="padding: 5px 10px; border: 1px solid #e9ecef; border-radius: 5px; font-size: 12px; background: white;">
-            <option value="doubao">豆包AI (推荐)</option>
-            <option value="masanli">Masanli API (备用)</option>
-        </select>
-        <button id="testApiBtn" style="margin-left: 10px; padding: 5px 15px; border: 1px solid #e9ecef; border-radius: 5px; font-size: 12px; background: #f8f9fa; cursor: pointer;">Test API</button>
-    </div>
-    
     <button id="chatSendBtn" class="chat-send-btn">Send Message</button>
     
     <div style="margin-top: 20px;">
@@ -313,16 +303,7 @@ author_profile: false
         <div id="chatResponse" class="chat-response">Waiting to send message...</div>
     </div>
     
-    <!-- Network Status Info -->
-    <div style="margin-top: 15px; padding: 10px; background-color: #e9ecef; border-radius: 8px; font-size: 12px; color: #6c757d;">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span>Network Status:</span>
-            <span id="networkStatus" style="font-weight: bold;">Checking...</span>
-        </div>
-        <div style="margin-top: 5px; font-size: 11px;" id="networkDetails">
-            Detecting environment and CORS support...
-        </div>
-    </div>
+    
     
 </div>
 
