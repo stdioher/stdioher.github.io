@@ -235,14 +235,14 @@ author_profile: false
     </div>
     
     <div class="chat-input-group">
-        <textarea id="chatPrompt" class="chat-textarea" placeholder="输入你想问的问题...">你好！</textarea>
+        <textarea id="chatPrompt" class="chat-textarea" placeholder="Input quetion...">Hello!</textarea>
     </div>
     
-    <button id="chatSendBtn" class="chat-send-btn">发送消息</button>
+    <button id="chatSendBtn" class="chat-send-btn">Send Message</button>
     
     <div style="margin-top: 20px;">
-        <h3 style="color: #495057; margin-bottom: 10px;">AI 回复：</h3>
-        <div id="chatResponse" class="chat-response">等待发送消息...</div>
+        <h3 style="color: #495057; margin-bottom: 10px;">AI reply：</h3>
+        <div id="chatResponse" class="chat-response">Waiting to send message...</div>
     </div>
     
     
