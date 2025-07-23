@@ -5,7 +5,7 @@ category: manuscripts
 permalink: /publication/2025-10-01-camera-shooting-resilient
 date: 2025-10-01
 venue: 'IEEE Transactions on Circuits and Systems for Video Technology'
-citation: 'Lin He, Bingwen Feng*, Zecheng Peng, et al. (2024). &quot;Camera-shooting resilient watermarking on image instance level.&quot; <i>IEEE Transactions on Circuits and Systems for Video Technology</i>.'
+citation: 'Mingjin He, Bingwen Feng*, Yizhi Guo, et al. (2024). &quot;Camera-shooting resilient watermarking on image instance level.&quot; <i>IEEE Transactions on Circuits and Systems for Video Technology</i>.'
 ---
 
 ## Abstract
